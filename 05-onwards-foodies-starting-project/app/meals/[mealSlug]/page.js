@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-export default function MealsSlug({ params }) {
+export default function MealDetailsPage({ params }) {
   return (
     <main>
-      <p>🔥 { params.slug } 🔥</p>
+      <h1>🔥 { params.mealSlug } 🔥</h1>
       <p><Link href="/meals">Return to meals</Link></p>
     </main>
   );
