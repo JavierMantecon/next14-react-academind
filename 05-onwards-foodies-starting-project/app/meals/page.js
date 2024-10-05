@@ -1,13 +1,27 @@
 import Link from 'next/link';
-
+import classes from './page.module.css'
+import MealsGrid from "@/components/meals/meals-grid";
 export default function MealsPage() {
   return (
-    <main>
-      <h1>🔥 Meals 🔥</h1>
-      <p><Link href="/community">Community</Link></p>
-      <p><Link href="/meals/potatoes">potatoes</Link></p>
-      <p><Link href="/meals/tomatoes">tomatoes</Link></p>
-      <p><Link href="/">Home</Link></p>
-    </main>
+    <>
+      <header className={classes.header}>
+        <h1>
+          Delicious meals, created{' '}
+          <span className={classes.highlight}></span>
+        </h1>
+        <p>
+          Choose your favorite recipe and cook it yourself. It is easy and fun!
+        </p>
+        <p className={classes.cta}>
+          <Link href="/meals/share">
+            Share your favorite recipe
+          </Link>
+
+        </p>
+      </header>
+      <main className={classes.main}>
+        <MealsGrid meals={[]} />
+      </main>
+    </>
   );
 }
