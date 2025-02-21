@@ -42,6 +42,7 @@ export async function createPost(prevState, formData) {
     });
 
     redirect('/feed');
+    revalidatePath('/', 'layout');
 }
 
 export async function togglePostLikeStatus(postId) {
