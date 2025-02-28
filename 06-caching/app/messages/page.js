@@ -1,4 +1,4 @@
-import { unstable_noStore} from "next/cache";
+// import { unstable_noStore } from "next/cache";
 import Messages from '@/components/messages';
 
 // export const revalidate = 5; // same as next.revalidate
@@ -7,7 +7,7 @@ import Messages from '@/components/messages';
 
 
 export default async function MessagesPage() {
-  unstable_noStore(); // equal to cache: 'no-store'
+  // unstable_noStore(); // equal to cache: 'no-store'
   const response = await fetch('http://localhost:8080/messages', {
     // next: {
     //   revalidate: 5 //seconds
@@ -16,6 +16,7 @@ export default async function MessagesPage() {
     // headers: {
     //   'X-ID': 'page',
     // },
+    tags: ['msg'] // sets a tag for the cache
   });
   const messages = await response.json();
 
