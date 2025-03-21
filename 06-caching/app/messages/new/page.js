@@ -12,7 +12,7 @@ export default function NewMessagePage() {
     // revalidatePath('/messages');
     // revalidatePath('/messages', 'layout'); // Layout: revalidate /messages and /messages/[nested_paths]
     // revalidatePath('/', 'layout'); // Revalidate all the cache and cache route from entire site
-    revalidateTag('msg')
+    // revalidateTag('msg')
     redirect('/messages');
   }
 
